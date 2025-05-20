@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HTML 기본 구조 학습을 위한 예제 페이지입니다.">
-    <meta name="keywords" content="HTML, 웹, 기초, 구조">
-    <meta name="author" content="웹 기초 학습">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="HTML 기본 구조 학습을 위한 예제 페이지입니다."
+    />
+    <meta name="keywords" content="HTML, 웹, 기초, 구조" />
+    <meta name="author" content="웹 기초 학습" />
     <title>HTML 기본 구조</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .highlight {
-            background-color: #f5f5f5;
-            padding: 10px;
-            border-left: 3px solid #007bff;
-        }
-        pre {
-            background-color: #f8f9fa;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-        code {
-            font-family: Consolas, monospace;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      .highlight {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-left: 3px solid #007bff;
+      }
+      pre {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+      code {
+        font-family: Consolas, monospace;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>HTML 문서 기본 구조</h1>
-            <nav>
-                <a href="../index.html">HTML 기초 메인으로</a> |
-                <a href="../../chapter2/index.html">CSS 기초로</a>
-            </nav>
-        </header>
+      <header>
+        <h1>HTML 문서 기본 구조</h1>
+        <nav>
+          <a href="../index.html">HTML 기초 메인으로</a> |
+          <a href="../../chapter2/index.html">CSS 기초로</a>
+        </nav>
+      </header>
 
-        <main>
-            <section>
-                <h2>HTML 문서의 기본 구성 요소</h2>
-                <div class="highlight">
-                    <p>HTML 문서는 다음과 같은 기본 구조로 구성됩니다:</p>
-                </div>
-                <pre><code>&lt;!DOCTYPE html&gt;
+      <main>
+        <section>
+          <h2>HTML 문서의 기본 구성 요소</h2>
+          <div class="highlight">
+            <p>HTML 문서는 다음과 같은 기본 구조로 구성됩니다:</p>
+          </div>
+          <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
@@ -63,49 +66,68 @@
     &lt;!-- 문서의 내용 --&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-            </section>
+        </section>
 
-            <section>
-                <h2>주요 요소 설명</h2>
-                <dl>
-                    <dt><code>&lt;!DOCTYPE html&gt;</code></dt>
-                    <dd>문서 유형을 선언합니다. HTML5를 사용함을 브라우저에 알립니다.</dd>
+        <section>
+          <h2>주요 요소 설명</h2>
+          <dl>
+            <dt><code>&lt;!DOCTYPE html&gt;</code></dt>
+            <dd>
+              문서 유형을 선언합니다. HTML5를 사용함을 브라우저에 알립니다.
+            </dd>
 
-                    <dt><code>&lt;html&gt;</code></dt>
-                    <dd>HTML 문서의 루트 요소입니다. 모든 다른 HTML 요소는 이 요소 안에 위치해야 합니다.</dd>
+            <dt><code>&lt;html&gt;</code></dt>
+            <dd>
+              HTML 문서의 루트 요소입니다. 모든 다른 HTML 요소는 이 요소 안에
+              위치해야 합니다.
+            </dd>
 
-                    <dt><code>&lt;head&gt;</code></dt>
-                    <dd>문서에 대한 메타데이터를 포함하는 요소입니다. 제목, 스타일, 스크립트, 메타 정보 등을 정의합니다.</dd>
+            <dt><code>&lt;head&gt;</code></dt>
+            <dd>
+              문서에 대한 메타데이터를 포함하는 요소입니다. 제목, 스타일,
+              스크립트, 메타 정보 등을 정의합니다.
+            </dd>
 
-                    <dt><code>&lt;meta&gt;</code></dt>
-                    <dd>문서에 대한 메타데이터를 정의합니다. 문자 인코딩, 뷰포트 설정, 설명, 키워드 등을 지정할 수 있습니다.</dd>
+            <dt><code>&lt;meta&gt;</code></dt>
+            <dd>
+              문서에 대한 메타데이터를 정의합니다. 문자 인코딩, 뷰포트 설정,
+              설명, 키워드 등을 지정할 수 있습니다.
+            </dd>
 
-                    <dt><code>&lt;title&gt;</code></dt>
-                    <dd>브라우저의 제목 표시줄이나 페이지 탭에 표시되는 문서의 제목을 정의합니다.</dd>
+            <dt><code>&lt;title&gt;</code></dt>
+            <dd>
+              브라우저의 제목 표시줄이나 페이지 탭에 표시되는 문서의 제목을
+              정의합니다.
+            </dd>
 
-                    <dt><code>&lt;body&gt;</code></dt>
-                    <dd>웹 페이지에서 실제로 보여지는 내용이 들어가는 영역입니다.</dd>
-                </dl>
-            </section>
+            <dt><code>&lt;body&gt;</code></dt>
+            <dd>웹 페이지에서 실제로 보여지는 내용이 들어가는 영역입니다.</dd>
+          </dl>
+        </section>
 
-            <section>
-                <h2>시맨틱 태그</h2>
-                <p>HTML5는 웹 페이지의 콘텐츠를 더 명확하게 정의하는 시맨틱 태그를 제공합니다:</p>
-                <ul>
-                    <li><code>&lt;header&gt;</code>: 문서나 섹션의 헤더 영역</li>
-                    <li><code>&lt;nav&gt;</code>: 탐색 링크 모음</li>
-                    <li><code>&lt;main&gt;</code>: 문서의 주요 콘텐츠 영역</li>
-                    <li><code>&lt;section&gt;</code>: 문서의 독립적인 섹션</li>
-                    <li><code>&lt;article&gt;</code>: 독립적인 콘텐츠 영역</li>
-                    <li><code>&lt;aside&gt;</code>: 주요 콘텐츠와 간접적으로 관련된 콘텐츠</li>
-                    <li><code>&lt;footer&gt;</code>: 문서나 섹션의 바닥글 영역</li>
-                </ul>
-            </section>
-        </main>
+        <section>
+          <h2>시맨틱 태그</h2>
+          <p>
+            HTML5는 웹 페이지의 콘텐츠를 더 명확하게 정의하는 시맨틱 태그를
+            제공합니다:
+          </p>
+          <ul>
+            <li><code>&lt;header&gt;</code>: 문서나 섹션의 헤더 영역</li>
+            <li><code>&lt;nav&gt;</code>: 탐색 링크 모음</li>
+            <li><code>&lt;main&gt;</code>: 문서의 주요 콘텐츠 영역</li>
+            <li><code>&lt;section&gt;</code>: 문서의 독립적인 섹션</li>
+            <li><code>&lt;article&gt;</code>: 독립적인 콘텐츠 영역</li>
+            <li>
+              <code>&lt;aside&gt;</code>: 주요 콘텐츠와 간접적으로 관련된 콘텐츠
+            </li>
+            <li><code>&lt;footer&gt;</code>: 문서나 섹션의 바닥글 영역</li>
+          </ul>
+        </section>
+      </main>
 
-        <footer>
-            <p>HTML 기초 학습 - 기본 구조 &copy; 2025</p>
-        </footer>
+      <footer>
+        <p>HTML 기초 학습 - 기본 구조 &copy; 2025</p>
+      </footer>
     </div>
-</body>
-</html> 
+  </body>
+</html>

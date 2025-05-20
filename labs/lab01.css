@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  border: 1px solid #ccc;
+  width: 27rem;
+  height: 15rem;
+}
+.header {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  height: 5rem;
+}
+main {
+  margin: 1rem 0;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+main > div {
+  margin: auto 0;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+}
+main > div:last-child {
+  padding-left: 0;
+}
+main > div p {
+  font-size: 0.7rem;
+}
+main > div:last-child {
+  padding-left: 1rem;
+}
+
+main > div.line {
+  padding: 0;
+  width: 1px;
+  background: #ccc;
+  height: 70%;
+}
+
+img {
+  object-fit: cover;
+  width: 6rem;
+}
