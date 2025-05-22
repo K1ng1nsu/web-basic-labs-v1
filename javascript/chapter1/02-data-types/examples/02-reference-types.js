@@ -7,6 +7,6 @@ let greet = function () {
   console.log("Hello!");
 };
 
-console.log(typeof arr);   // object
-console.log(typeof user);  // object
+console.log(typeof arr); // object
+console.log(typeof user); // object
 console.log(typeof greet); // function

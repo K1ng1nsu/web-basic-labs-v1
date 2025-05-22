@@ -1,5 +1,6 @@
-function sayHello() {
-  console.log("Hello, world!");
+function add(a, b) {
+  return a + b;
 }
 
-sayHello(); // 호출
+const result = add(3, 5);
+console.log("결과:", result);

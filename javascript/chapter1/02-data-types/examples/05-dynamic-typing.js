@@ -1,4 +1,5 @@
 // 자바스크립트는 동적 타이핑 언어
+
 let value = "hello";
 console.log(typeof value); // string
 

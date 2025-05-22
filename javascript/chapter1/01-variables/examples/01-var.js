@@ -13,4 +13,5 @@ function varTest() {
   }
   console.log('x 값:', x); // 함수 스코프
 }
+// console.log(x);
 varTest();
