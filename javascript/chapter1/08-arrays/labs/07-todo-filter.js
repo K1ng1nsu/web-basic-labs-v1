@@ -4,9 +4,13 @@
 */
 
 const todos = [
-  { text: "빨래하기", completed: true },
-  { text: "과제 제출", completed: false },
-  { text: "마트 가기", completed: false },
+  { text: '빨래하기', completed: true },
+  { text: '과제 제출', completed: false },
+  { text: '마트 가기', completed: false },
 ];
 
 // TODO: filter로 완료되지 않은 할 일만 골라서 출력
+
+todos
+  .filter((todo) => !todo.completed)
+  .forEach((todo) => console.log(todo.text));

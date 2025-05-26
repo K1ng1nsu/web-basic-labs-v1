@@ -3,9 +3,11 @@
 */
 
 const cart = [
-  { name: "Keyboard", price: 30000 },
-  { name: "Mouse", price: 15000 },
-  { name: "Monitor", price: 200000 },
+  { name: 'Keyboard', price: 30000 },
+  { name: 'Mouse', price: 15000 },
+  { name: 'Monitor', price: 200000 },
 ];
 
 // TODO: reduce로 총합 계산
+
+console.log(cart.reduce((ac, item) => ac + item.price, 0));

@@ -11,6 +11,11 @@
     <script>
       // TODO: 상품 옵션을 선택할 때마다 선택된 옵션을 콘솔에 출력하세요.
       // change 이벤트 발생 시 선택된 값 (value)을 console.log()로 출력
+      const selectEl = document.getElementById('optionSelect');
+
+      selectEl.addEventListener('change', () => {
+        console.log(selectEl.value);
+      });
     </script>
   </body>
 </html>

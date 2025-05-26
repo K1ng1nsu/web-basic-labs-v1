@@ -3,9 +3,11 @@
 */
 
 const users = [
-  { name: "이유저", email: "chulsoo@gmail.com" },
-  { name: "김유저", email: "younghee@naver.com" },
-  { name: "서유저", email: "minsu@daum.net" },
+  { name: '이유저', email: 'chulsoo@gmail.com' },
+  { name: '김유저', email: 'younghee@naver.com' },
+  { name: '서유저', email: 'minsu@daum.net' },
 ];
 
 // TODO: find 사용
+
+console.log(users.find((user) => user.email.includes('naver.com')));

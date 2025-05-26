@@ -7,3 +7,21 @@ const scores = [92, 77, 45, 88, 64];
 
 // TODO: map을 사용해 점수를 등급으로 변환하세요.
 // 90 이상: A, 80 이상: B, 70 이상: C, 60 이상: D, 나머지: F
+
+const strScores = scores.map((score) => {
+  if (score >= 90) {
+    return 'A';
+  }
+  if (score >= 80) {
+    return 'B';
+  }
+  if (score >= 70) {
+    return 'C';
+  }
+  if (score >= 60) {
+    return 'D';
+  }
+  return 'F';
+});
+
+console.log(strScores);

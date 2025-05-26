@@ -8,6 +8,12 @@
     <script>
       // TODO: 사용자가 검색창에 입력한 내용을 실시간으로 미리보기 하세요.
       // input 이벤트 발생 시, preview에 입력된 검색어 표시
+      const inputEl = document.getElementById('searchInput');
+      const spanEl = document.getElementById('preview');
+
+      inputEl.addEventListener('input', (event) => {
+        spanEl.textContent = event.target.value;
+      });
     </script>
   </body>
 </html>

@@ -5,8 +5,28 @@
 
 function checkByCondition(num, callback) {
   // TODO: callback을 이용해 조건 검사
+  return callback(num);
 }
 
 // 1) 짝수인지 검사
 // 2) 10보다 큰지 검사
 // 3) 3의 배수인지 검사
+
+let someNum = 30;
+
+console.log(
+  `${someNum} 은 ${
+    checkByCondition(someNum, (num) => num % 2 == 0) ? '짝수' : '홀수'
+  } 입니다`
+);
+console.log(
+  `${someNum} 은 10보다 ${
+    checkByCondition(someNum, (num) => num > 10) ? '큽니다' : '작습니다'
+  }`
+);
+
+console.log(
+  `${someNum}은 3의 배수가 ${
+    checkByCondition(someNum, (num) => num % 3 == 0) ? '맞습니다.' : '아닙니다.'
+  }`
+);

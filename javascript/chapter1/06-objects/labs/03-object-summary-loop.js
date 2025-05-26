@@ -1,7 +1,7 @@
 const student = {
-  name: "윤학생",
+  name: '윤학생',
   age: 21,
-  major: "컴퓨터공학",
+  major: '컴퓨터공학',
 };
 
 // TODO:
@@ -10,3 +10,7 @@ const student = {
 // name: 윤학생
 // age: 21
 // major: 컴퓨터공학
+
+for (const key in student) {
+  console.log(`${key}: ${student[key]}`);
+}
