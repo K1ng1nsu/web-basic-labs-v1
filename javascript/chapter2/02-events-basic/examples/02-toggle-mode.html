@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button id="modeBtn">🌙 다크모드 켜기</button>
+
+    <script>
+      const btn = document.getElementById("modeBtn");
+      let isDark = false;
+
+      btn.addEventListener("click", () => {
+        document.body.style.backgroundColor = isDark ? "#fff" : "#222";
+        document.body.style.color = isDark ? "#000" : "#fff";
+        btn.textContent = isDark ? "🌙 다크모드 켜기" : "☀️ 라이트모드 켜기";
+        isDark = !isDark;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="outer" style="padding: 20px; background: lightgray">
+      <button id="inner">버튼</button>
+    </div>
+
+    <script>
+      document.getElementById("outer").addEventListener("click", () => {
+        console.log("🟩 바깥 div 클릭됨");
+      });
+
+      document.getElementById("inner").addEventListener("click", () => {
+        console.log("🟥 안쪽 버튼 클릭됨");
+      });
+    </script>
+  </body>
+</html>

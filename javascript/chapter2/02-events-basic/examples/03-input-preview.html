@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="username" placeholder="이름 입력" />
+    <p id="preview"></p>
+    <script>
+      const input = document.getElementById("username");
+      const preview = document.getElementById("preview");
+      input.addEventListener("input", () => {
+        preview.textContent = "입력 중: " + input.value;
+      });
+    </script>
+  </body>
+</html>

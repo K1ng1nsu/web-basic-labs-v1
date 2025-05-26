@@ -1,0 +1,35 @@
+<!-- [예제] axios로 데이터 가져와 DOM에 출력 -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Axios DOM 조작 예제</title>
+  </head>
+  <body>
+    <h1>사용자 정보</h1>
+    <button id="load">불러오기</button>
+    <ul id="userList"></ul>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      const btn = document.getElementById("load");
+      const list = document.getElementById("userList");
+
+      btn.addEventListener("click", async () => {
+        try {
+          const response = await axios.get(
+            "https://jsonplaceholder.typicode.com/users"
+          );
+          list.innerHTML = ""; // 기존 목록 초기화
+          response.data.forEach((user) => {
+            const li = document.createElement("li");
+            li.textContent = `${user.name} (${user.email})`;
+            list.append(li);
+          });
+        } catch (e) {
+          alert("데이터를 불러오지 못했습니다.");
+        }
+      });
+    </script>
+  </body>
+</html>

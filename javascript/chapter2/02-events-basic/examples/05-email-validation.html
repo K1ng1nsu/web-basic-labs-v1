@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="email" id="email" placeholder="이메일 입력" />
+    <p id="message" style="color: red"></p>
+
+    <script>
+      const email = document.getElementById("email");
+      const msg = document.getElementById("message");
+
+      email.addEventListener("change", () => {
+        if (!email.value.includes("@")) {
+          msg.textContent = "유효한 이메일 주소를 입력하세요.";
+        } else {
+          msg.textContent = "";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h3>이름 입력</h3>
+    <input type="text" id="username" placeholder="이름을 입력하세요" />
+    <p>입력된 이름: <span id="preview">없음</span></p>
+
+    <script>
+      const input = document.getElementById("username");
+      const preview = document.getElementById("preview");
+
+      input.addEventListener("input", () => {
+        const value = input.value.trim();
+        preview.textContent = value === "" ? "없음" : value;
+      });
+    </script>
+  </body>
+</html>

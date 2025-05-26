@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <ul id="menu">
+      <li>홈</li>
+      <li>상품</li>
+      <li>고객센터</li>
+    </ul>
+
+    <script>
+      const menu = document.getElementById("menu");
+
+      menu.addEventListener("click", (e) => {
+        if (e.target.tagName === "LI") {
+          console.log("선택한 메뉴: " + e.target.textContent);
+        }
+      });
+    </script>
+  </body>
+</html>

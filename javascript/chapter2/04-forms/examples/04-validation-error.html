@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form id="joinForm">
+      <input type="text" id="email" placeholder="이메일" />
+      <input type="password" id="pw" placeholder="비밀번호" />
+      <button>가입</button>
+    </form>
+    <p id="error" style="color: red"></p>
+    <script>
+      const form = document.getElementById("joinForm");
+      const error = document.getElementById("error");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email").value.trim();
+        const pw = document.getElementById("pw").value.trim();
+        if (!email || !pw) {
+          error.textContent = "모든 항목을 입력하세요";
+          return;
+        }
+        if (!email.includes("@")) {
+          error.textContent = "이메일 형식이 올바르지 않습니다";
+          return;
+        }
+        error.textContent = "가입 성공!";
+      });
+    </script>
+  </body>
+</html>

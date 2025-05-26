@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="myInput" placeholder="여기에 입력" />
+    <script>
+      const input = document.getElementById("myInput");
+      input.addEventListener("focus", () => {
+        console.log("포커스됨");
+      });
+      input.addEventListener("blur", () => {
+        console.log("포커스 해제됨");
+      });
+      input.addEventListener("keydown", (e) => {
+        console.log("키 누름:", e.key);
+      });
+    </script>
+  </body>
+</html>

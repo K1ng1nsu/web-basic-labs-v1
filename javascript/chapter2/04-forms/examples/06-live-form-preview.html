@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="username" placeholder="이름" />
+    <select id="role">
+      <option value="">직군 선택</option>
+      <option value="dev">개발</option>
+      <option value="design">디자인</option>
+    </select>
+    <p>지원자 정보: <span id="preview">-</span></p>
+    <script>
+      const username = document.getElementById("username");
+      const role = document.getElementById("role");
+      const preview = document.getElementById("preview");
+      username.addEventListener("input", update);
+      role.addEventListener("change", update);
+      function update() {
+        preview.textContent =
+          username.value && role.value
+            ? `${username.value} (${role.options[role.selectedIndex].text})`
+            : "-";
+      }
+    </script>
+  </body>
+</html>

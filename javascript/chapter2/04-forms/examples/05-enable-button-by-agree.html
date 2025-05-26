@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form>
+      <label><input type="checkbox" id="agreeChk" /> 개인정보 동의</label>
+      <button id="submitBtn" disabled>제출</button>
+    </form>
+    <script>
+      const chk = document.getElementById("agreeChk");
+      const btn = document.getElementById("submitBtn");
+      chk.addEventListener("change", () => {
+        btn.disabled = !chk.checked;
+      });
+    </script>
+  </body>
+</html>

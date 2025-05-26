@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form id="testForm">
+      <input type="text" id="user" placeholder="사용자명" />
+      <button>제출</button>
+    </form>
+    <p id="info"></p>
+    <script>
+      const form = document.getElementById("testForm");
+      const info = document.getElementById("info");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const user = document.getElementById("user").value.trim();
+        info.textContent = user
+          ? `안녕하세요, ${user}님!`
+          : "이름을 입력하세요";
+      });
+    </script>
+  </body>
+</html>

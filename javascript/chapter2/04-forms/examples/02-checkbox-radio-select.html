@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <label><input type="checkbox" id="chk1" /> 뉴스레터 받기</label>
+    <br />
+    <label
+      ><input type="radio" name="pay" value="card" checked /> 카드결제</label
+    >
+    <label><input type="radio" name="pay" value="bank" /> 무통장입금</label>
+    <br />
+    <select id="shipping">
+      <option value="">배송방법 선택</option>
+      <option value="fast">빠른배송</option>
+      <option value="normal">일반배송</option>
+    </select>
+    <p id="result"></p>
+    <script>
+      const chk = document.getElementById("chk1");
+      const radios = document.getElementsByName("pay");
+      const select = document.getElementById("shipping");
+      const result = document.getElementById("result");
+
+      chk.addEventListener("change", update);
+      select.addEventListener("change", update);
+      radios.forEach((r) => r.addEventListener("change", update));
+
+      function update() {
+        const pay = Array.from(radios).find((r) => r.checked)?.value;
+        result.textContent = `뉴스레터: ${
+          chk.checked ? "O" : "X"
+        }, 결제: ${pay}, 배송: ${select.value || "없음"}`;
+      }
+    </script>
+  </body>
+</html>

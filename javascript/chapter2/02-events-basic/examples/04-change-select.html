@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <select id="city">
+      <option value="seoul">서울</option>
+      <option value="busan">부산</option>
+    </select>
+    <p id="selected"></p>
+    <script>
+      const select = document.getElementById("city");
+      const result = document.getElementById("selected");
+      select.addEventListener("change", () => {
+        result.textContent = "선택된 도시: " + select.value;
+      });
+    </script>
+  </body>
+</html>

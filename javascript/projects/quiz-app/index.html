@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Quiz App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="view-start">
+        <h1>JS 퀴즈</h1>
+        <div class="start-box">
+          <label>
+            문제 수 선택:
+            <select id="select-count">
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10" selected>10</option>
+            </select>
+          </label>
+          <button id="start-btn">시작</button>
+        </div>
+      </div>
+
+      <div id="view-quiz" style="display: none">
+        <div id="quiz-status">
+          <span id="progress"></span>
+          <span id="timer" style="float: right"></span>
+        </div>
+        <div id="quiz-box"></div>
+        <button id="submit-btn" disabled>제출</button>
+      </div>
+
+      <div id="view-result" style="display: none">
+        <h2>퀴즈 결과</h2>
+        <div id="score"></div>
+        <button id="restart-btn">다시하기</button>
+      </div>
+    </div>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
