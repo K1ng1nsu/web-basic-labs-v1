@@ -8,6 +8,18 @@
     <p id="output"></p>
     <script>
       // TODO: 체크 안 되어 있으면 제출 막고 메시지 출력
+      const agreeForm = document.getElementById('agreeForm');
+      const chk = document.getElementById('chk');
+      const output = document.getElementById('output');
+
+      agreeForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!chk.checked) {
+          output.textContent = '약관을 동의해주세요';
+          return;
+        }
+        output.textContent = '성공';
+      });
     </script>
   </body>
 </html>

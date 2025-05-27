@@ -14,37 +14,24 @@
     <ul id="todoList"></ul>
 
     <script>
-      const input = document.getElementById("todoInput");
-      const addBtn = document.getElementById("addBtn");
-      const todoList = document.getElementById("todoList");
+      const input = document.getElementById('todoInput');
+      const addBtn = document.getElementById('addBtn');
+      const todoList = document.getElementById('todoList');
 
-      addBtn.addEventListener("click", () => {
-        const text = input.value.trim();
-        if (text === "") return;
-
-        const li = document.createElement("li");
-        li.innerHTML = `
-      <span class="todo-text">${text}</span>
-      <button>✅</button>
-      <button>❌</button>
-    `;
-        todoList.appendChild(li);
-        input.value = "";
+      addBtn.addEventListener('click', () => {
+        todoList.innerHTML += `<li>
+          <span>${input.value}</span>
+          <button>✅</button>
+          <button>✖️</button>
+          </li>`;
+        input.value = '';
       });
 
-      todoList.addEventListener("click", (e) => {
-        if (e.target.tagName !== "BUTTON") return;
-
-        const li = e.target.closest("li");
-        const textEl = li.querySelector(".todo-text");
-
-        if (e.target.textContent === "✅") {
-          textEl.classList.toggle("done");
-        }
-
-        if (e.target.textContent === "❌") {
-          li.remove();
-        }
+      todoList.addEventListener('click', (e) => {
+        if (e.target.tagName != 'BUTTON') return;
+        // prettier-ignore
+        if (e.target.textContent == '✅') e.target.closest('li').firstElementChild.classList.toggle('done');
+        if (e.target.textContent == '✖️') e.target.closest('li').remove();
       });
     </script>
 

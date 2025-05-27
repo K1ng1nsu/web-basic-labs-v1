@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    img {
+      object-fit: cover;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
   <body>
-    <img id="mainImage" src="https://via.placeholder.com/200x200?text=Main" />
+    <img
+      id="mainImage"
+      src="https://i.namu.wiki/i/d1A_wD4kuLHmOOFqJdVlOXVt1TWA9NfNt_HA0CS0Y_N0zayUAX8olMuv7odG2FiDLDQZIRBqbPQwBSArXfEJlQ.webp"
+    />
 
     <div id="thumbs">
-      <img src="https://via.placeholder.com/100x100?text=1" />
-      <img src="https://via.placeholder.com/100x100?text=2" />
-      <img src="https://via.placeholder.com/100x100?text=3" />
+      <img
+        src="https://i.namu.wiki/i/d1A_wD4kuLHmOOFqJdVlOXVt1TWA9NfNt_HA0CS0Y_N0zayUAX8olMuv7odG2FiDLDQZIRBqbPQwBSArXfEJlQ.webp"
+      />
+      <img
+        src="https://i.namu.wiki/i/PagwakcE00JZaGpEvXym79-IMvKFBmdqOBlq778J-bvJMwz15lDLleTKc56S2wwcRcaEm3FZZ4EtniRa5bXdeQ.webp"
+      />
+      <img
+        src="https://imgnn.seoul.co.kr/img/upload/2024/08/06/SSC_20240806100040_V.jpg"
+      />
     </div>
 
     <script>
       // TODO:
       // thumbs에 이벤트 위임
       // 클릭된 썸네일 이미지의 src를 mainImage의 src로 변경
+      const thumbs = document.getElementById('thumbs');
+      const mainImage = document.getElementById('mainImage');
+
+      thumbs.addEventListener('click', (e) => {
+        if (e.target.tagName == 'IMG') {
+          mainImage.setAttribute('src', e.target.getAttribute('src'));
+        }
+      });
     </script>
   </body>
 </html>

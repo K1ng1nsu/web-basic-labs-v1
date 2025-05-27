@@ -12,6 +12,15 @@
       // TODO:
       // 1. overlay 클릭 시 "모달 닫힘" 출력
       // 2. modal 내부 클릭 시 stopPropagation으로 막기
+      const overlay = document.getElementById('overlay');
+      const modal = document.getElementById('modal');
+
+      overlay.addEventListener('click', () => {
+        console.log('모달 닫힘');
+      });
+      modal.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
     </script>
   </body>
 </html>

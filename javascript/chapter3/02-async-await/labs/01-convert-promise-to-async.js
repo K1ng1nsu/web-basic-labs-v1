@@ -13,3 +13,21 @@ function fetchData() {
 }
 fetchData();
 */
+
+async function fetchData() {
+  try {
+    const respones = await fetch(
+      'https://jsonplaceholder.typicode.com/posts/1'
+    );
+    const data = await respones.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error(error);
+    return 'error';
+  }
+}
+
+fetchData();
+
+// 다음문제로 0527 16:45

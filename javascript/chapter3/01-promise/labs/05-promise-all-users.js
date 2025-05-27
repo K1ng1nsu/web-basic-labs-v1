@@ -12,3 +12,49 @@ https://jsonplaceholder.typicode.com/users/3
 - 3명의 이름(name)만 배열로 출력할 것 (예: ["Leanne", "Ervin", "Clementine"])
 - 에러가 발생하면 "요청 실패" 메시지를 출력하세요.
 */
+
+async function fetchData(url) {
+  return (await fetch(url)).json();
+}
+
+async function test() {
+  const promises = [
+    fetchData('https://jsonplaceholder.typicode.com/users/1'),
+    fetchData('https://jsonplaceholder.typicode.com/users/2'),
+    fetchData('https://jsonplaceholder.typicode.com/users/3'),
+  ];
+
+  let result;
+  try {
+    result = await Promise.all(promises);
+  } catch (error) {
+    console.error('요청 실패');
+  }
+  result.forEach((user) => console.log(user.name));
+}
+// test();
+
+async function test2() {
+  const promises = [
+    fetch('https://jsonplaceholder.typicode.com/users/1'),
+    fetch('https://jsonplaceholder.typicode.com/users/2'),
+    fetch('https://jsonplaceholder.typicode.com/users/3'),
+  ];
+
+  const responses = await Promise.all(promises);
+
+  console.log(responses);
+
+  let datas = [];
+
+  for (const response of responses) {
+    datas.push(await response.json());
+  }
+
+  console.log(datas);
+
+  let names = datas.map((user) => user.name);
+  console.log(names);
+  return names;
+}
+test2().then((names) => console.log(names));

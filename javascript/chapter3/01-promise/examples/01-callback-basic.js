@@ -2,9 +2,9 @@
 function getUserData(id, callback) {
   setTimeout(() => {
     if (id === 1) {
-      callback(null, { id: 1, name: "윤유저" });
+      callback(null, { id: 1, name: '윤유저' });
     } else {
-      callback("유저를 찾을 수 없습니다.", null);
+      callback('유저를 찾을 수 없습니다.', null);
     }
   }, 1000);
 }
@@ -12,8 +12,8 @@ function getUserData(id, callback) {
 // 사용
 getUserData(1, (err, user) => {
   if (err) {
-    console.error("에러:", err);
+    console.error('에러:', err);
   } else {
-    console.log("콜백으로 받은 유저:", user);
+    console.log('콜백으로 받은 유저:', user);
   }
 });

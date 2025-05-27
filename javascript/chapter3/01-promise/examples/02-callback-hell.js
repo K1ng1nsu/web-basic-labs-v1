@@ -1,6 +1,6 @@
 // [콜백 지옥 예제]
 function getUser(id, callback) {
-  setTimeout(() => callback(null, { id, name: "Kim JS" }), 500);
+  setTimeout(() => callback(null, { id, name: 'Kim JS' }), 500);
 }
 function getPostsByUser(user, callback) {
   setTimeout(
@@ -19,7 +19,7 @@ getUser(1, (err, user) => {
     if (err) return console.error(err);
     getCommentsByPost(posts[0], (err, comments) => {
       if (err) return console.error(err);
-      console.log("콜백 지옥 결과:", comments);
+      console.log('콜백 지옥 결과:', comments);
     });
   });
 });

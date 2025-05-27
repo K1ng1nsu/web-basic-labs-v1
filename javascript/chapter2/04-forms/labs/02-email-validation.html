@@ -8,6 +8,19 @@
     <p id="error"></p>
     <script>
       // TODO: .includes("@") 검사, 올바르면 "확인됨", 아니면 에러 메시지
+      const emailForm = document.getElementById('emailForm');
+      const email = document.getElementById('email');
+      const error = document.getElementById('error');
+
+      emailForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!(email.value.trim() != '' && email.value.includes('@'))) {
+          error.textContent =
+            '이메일은 비워둘 수 없습니다. 또는 올바른 이메일 형식이 아닙니다.';
+          return;
+        }
+        error.textContent = '확인됨';
+      });
     </script>
   </body>
 </html>
