@@ -57,4 +57,20 @@ async function test2() {
   console.log(names);
   return names;
 }
-test2().then((names) => console.log(names));
+// test2().then((names) => console.log(names));
+
+function test3() {
+  const promises = [
+    fetch('https://jsonplaceholder.typicode.com/users/1'),
+    fetch('https://jsonplaceholder.typicode.com/users/2'),
+    fetch('https://jsonplaceholder.typicode.com/users/3'),
+  ];
+
+  return Promise.all(promises);
+}
+
+test3()
+  .then((responses) => {
+    return Promise.all(responses.map((response) => response.json()));
+  })
+  .then((datas) => console.log(datas.map((data) => data.name)));

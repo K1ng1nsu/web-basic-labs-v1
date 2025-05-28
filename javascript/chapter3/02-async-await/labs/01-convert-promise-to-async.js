@@ -29,5 +29,3 @@ async function fetchData() {
 }
 
 fetchData();
-
-// 다음문제로 0527 16:45

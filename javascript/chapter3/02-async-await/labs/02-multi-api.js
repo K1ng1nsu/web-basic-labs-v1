@@ -7,3 +7,16 @@
 - async/await와 Promise.all을 활용
 - 두 API 모두의 데이터를 받아서 각각 출력
 */
+
+async function main() {
+  const promises = [
+    fetch('https://jsonplaceholder.typicode.com/posts/2'),
+    fetch('https://jsonplaceholder.typicode.com/users/1'),
+  ];
+  const responses = await Promise.all(promises);
+  const datas = await Promise.all(responses.map((response) => response.json()));
+
+  datas.forEach((data) => console.log(data));
+}
+
+main();
