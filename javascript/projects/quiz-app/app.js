@@ -1,7 +1,7 @@
 // utils
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+// function delay(ms) {
+//   return new Promise((resolve) => setTimeout(resolve, ms));
+// }
 function elementDisplayToggle(element) {
   if (element.style.display == 'none') return (element.style.display = 'block');
   if (element.style.display != 'none') return (element.style.display = 'none');
@@ -16,12 +16,14 @@ function getRandomNum(count, range = 10) {
     }
     if (ramdomNums.length == count) break;
   }
-  console.log(ramdomNums);
 
   return ramdomNums;
 }
-//
+// manipulate dom
+// question
 async function insertQuestion(element, question, progress, userAnswers) {
+  console.log(question);
+
   const labels = question.choices.map((choice, index) => {
     return `<label><input type="radio" name="choice" value="${index}" />${choice}</label>`;
   });
@@ -47,6 +49,7 @@ async function insertQuestion(element, question, progress, userAnswers) {
 
   let currentChoiceValue = undefined;
   let timeCount = 0;
+
   const timer = document.getElementById('timer');
   const choiceForm = document.getElementById('choice-form');
   const submitBtn = document.getElementById('submit-btn');
@@ -80,7 +83,7 @@ async function insertQuestion(element, question, progress, userAnswers) {
     });
   });
 }
-
+// result
 function getResults(questions, userAnswers) {
   const results = [];
   for (let i = 0; i < questions.length; i++) {
@@ -173,17 +176,21 @@ let questions = [];
 
 // adding event
 startBtn.addEventListener('click', async () => {
+  // quiz
   questionNum = selectCount.value;
+
+  // make question
   let randomNums = getRandomNum(questionNum);
   for (let i = 0; i < questionNum; i++) {
     questions.push(data[randomNums[i] - 1]);
   }
-  // viewQuiz display & viewStart display none
+
+  // viewStart display none & viewQuiz display
   elementDisplayToggle(viewStart);
   elementDisplayToggle(viewQuiz);
 
   for (let i = 0; i < questionNum; i++) {
-    const a = await insertQuestion(
+    await insertQuestion(
       viewQuiz,
       questions[userAnswers.length],
       {
@@ -193,8 +200,10 @@ startBtn.addEventListener('click', async () => {
       userAnswers
     );
   }
+
   insertResult(viewResult, questions, userAnswers);
 
+  // viewQuiz display none & viewResult display
   elementDisplayToggle(viewQuiz);
   elementDisplayToggle(viewResult);
 });
