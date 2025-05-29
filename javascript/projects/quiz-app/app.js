@@ -53,11 +53,13 @@ async function insertQuestion(element, question, progress, userAnswers) {
   const timer = document.getElementById('timer');
   const choiceForm = document.getElementById('choice-form');
   const submitBtn = document.getElementById('submit-btn');
+
   submitBtn.addEventListener('click', (e) => {
     choiceForm.dispatchEvent(
       new Event('submit', { bubbles: true, cancelable: true })
     );
   });
+
   const timeCouter = setInterval(() => {
     timeCount++;
     timer.textContent = `남은시간: ${question.timeLimit - timeCount}s`;
